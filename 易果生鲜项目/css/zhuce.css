@@ -1,0 +1,301 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, option, select, pre, code, form, fieldset, legend, input, button, textarea, blockquote, th, td, p {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+	height: 100%;
+}
+html{	
+	font-size: 26.67vw;
+}
+body,input,textarea{
+	font-family:Arial,Verdana,"\5b8b\4f53";
+	font-size: 12px;
+    color: #444;
+}
+a{
+	text-decoration:none;
+	color: #444;
+	cursor: pointer;
+}
+ul,ol{
+	list-style:none;
+}
+img{
+	border:none;
+	display: block;
+}
+/*去掉状态*/
+i,em,strong,b,s{
+	font-style: normal;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+	font-size: 12px;
+}
+.f1{
+	float: left;
+}
+.f2{
+	float: right;
+}
+i,s{
+    display: inline-block;
+    vertical-align: middle;
+}
+/* 防止高度塌陷 */
+.clearfix:after,.wrap:after{
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+}
+/* 头部 */
+.header{
+	border: none;
+    background: #e0e0e0;
+}
+.wrap{
+	width: 1200px;
+    margin: 0 auto;
+}
+.header .wrap{
+	padding: 15px 0 5px 0;
+}
+.logo{
+    position: relative;
+    float: left;
+}
+.logo a{
+	display: block;
+	width: 195px;
+    height: 50px;
+    background: url(../img/logom.png) no-repeat;
+}
+.logo span{
+	font: 28px/1 Microsoft YaHei;
+    color: #008842;
+    position: absolute;
+    left: 240px;
+    top: 6px;
+    white-space: nowrap;
+}
+/* 主体 */
+.register{
+	padding-top: 54px;
+}
+.tabba{
+	position: relative;
+	width: 100%;
+    margin: 10px auto 0;
+}
+.tabba:before{
+	display: table;
+    content: "";
+}
+.tab-content{
+	border: 1px solid #c4dfb1;
+    background-color: #fff;
+    padding: 40px 0 50px;
+}
+.register p{
+	margin-bottom: 29px;
+    font: 14px Arial,"Microsoft YaHei";
+}
+.register .field-name{
+	display: inline-block;
+    width: 220px;
+    text-align: right;
+    padding-right: 20px;
+}
+.register input{
+	border: 1px solid #c1c1c1;
+    background-color: #fff;
+    height: 38px;
+    vertical-align: middle;
+    padding-left: 14px;
+    width: 290px;
+    font: 14px/38px "Microsoft YaHei";
+    margin-right: 20px;
+}
+.register .input-yzm{
+	width: 147px;
+}
+.gray{
+	color: #666666;
+}
+.input-phone{
+	background-position: 276px -30px;
+}
+.input-phone, .input-mail, .input-key{
+	background-image: url(../img/left4.png);
+    background-repeat: no-repeat;
+}
+.btn-yzm{
+	display: inline-block;
+    width: 121px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    background-color: #f7f7f7;
+    border: 1px solid #c1c1c1;
+    color: #008842;
+    margin-right: 20px;
+}
+.input-key{
+	background-position: 276px -70px;
+}
+label{
+	cursor: default;
+}
+input[type=checkbox]{
+	margin-right: 9px;
+    height: 14px;
+    width: 14px;
+    vertical-align: -1px;
+}
+.green{
+	color: #008842;
+}
+.btn-green-l{
+	display: inline-block;
+	width: 306px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #008842;
+    font: 18px/50px "Microsoft YaHei";
+}
+.register .f2{
+	position: relative;
+    height: 340px;
+    width: 330px;
+    text-align: center;
+    padding-top: 50px;
+    font: 14px/56px "Microsoft YaHei";
+}
+.register .f2 .rimg{
+	position: absolute;
+    left: -140px;
+    top: 70px;
+}
+
+.tabba .right{
+	position: absolute;
+    top: -27px;
+    right: 0;
+	text-align: right;
+    font: 14px/1 "Microsoft YaHei";
+}
+.right .orange{
+	margin-right: 36px;
+    color: #ef760a;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* 页尾 */
+.footer{
+	zoom: 1;
+	clear: both;
+	height: 400px;
+    margin-top: 30px;
+    position: relative;
+    padding-bottom: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+.footer .wrap{
+	margin: 50px auto 0;
+	padding-top: 30px;
+}
+.footer dl{
+	width: 190px;
+    float: left;
+    margin-left: 50px;
+    display: inline;
+}
+.footer dl dt{
+	height: 23px;
+    line-height: 23px;
+    background: url(../img/foot1.png) no-repeat;
+    font-size: 14px;
+    text-indent: 40px;
+}
+.footer .fot1 dt{
+	background-position: 0 0;
+}
+.footer .fot2 dt{
+	background-position: 0 -23px;
+}
+.footer .fot3 dt{
+	background-position: 0 -46px;
+}
+.footer .fot4 dt{
+	background-position: 0 -69px;
+}
+.footer .fot5 dt{
+	background-position: 0 -93px;
+}
+.footer dl dd{
+	border-left: 1px dashed #A8A8A8;
+    padding-left: 20px;
+    height: 110px;
+    min-height: 110px;
+    margin: 15px 0 0 13px;
+}
+.footer dl dd a{
+	color: #575556;
+    line-height: 22px;
+}
+.footer .fot-serve{
+	clear: both;
+    text-align: center;
+    padding: 60px 0 20px;
+    color: #008842;
+    font-size: 14px;
+}
+.footer .fot-serve span{
+	display: inline-block;
+    padding: 0 10px;
+}
+.footer .fot-copy{
+	clear: both;
+    color: #717171;
+    text-align:center;
+    line-height: 22px;
+}
+.footer .fot-copy a{
+	color: #717171;
+}
+.footer .fot-copy .fot-01 a:hover{
+	color: #008842; 
+}
+.footer .fot-gongan a{
+	display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    zoom: 1;
+    vertical-align: middle;
+}
+.footer .fot-gongan .fot-last{
+	display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+.footer .fot-gongan .fot-last img{
+	float: left;
+}
+.footer .fot-gongan .fot-last span{
+	float: left;
+	height: 20px;
+    line-height: 20px;
+    margin: 0px 0px 0px 5px;
+    color: #939393;
+}
