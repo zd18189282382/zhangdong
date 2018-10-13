@@ -36,37 +36,42 @@ $(function(){
 		//先获取所有的数量按钮
 		// let num = $(".itxt");
 		//循环这些数量按钮
+		
 		for(let i=0;i<$(".decrement").length;i++){
-			$(".decrement").eq(i).onclick = function(){
-				//点击数量按钮，获取它的值
-				let nums = $(".itxt").eq(i).value-1;
+			$(".decrement")[i].onclick = function(){
+				//点击数量按钮，获取它的值'
+				// console.info(($(".itxt").val()-1));
+				
+				console.info($(".itxt").eq().val()-1);
+				let nums = $(".itxt").eq(i).val()-1;
 
 				//单价
 				//通过点击的那一个input标签的父元素td的上一个节点td的innerHTML取整可以得到单价
-				let price = parseFloat($(".cart-price").innerHTML);
+				let price = parseFloat($("cart-list .cart-price").html());
+				console.info($("cart-list .cart-price").html());
 
 				//总价
 				//找到总价那一列显示数据的span标签，通过点击的那一个input标签的父元素td的下一个节点td的第一个孩子节点找到span
-				let span =$(".cart-total span");
+				let span =$(".cart-total span").html();
 				
 				//数量不能小于0
 				if(nums<=0){
-					this.value = "0";
-					span.innerHTML = 0;
+					nums = 0;
+					span = 0;
 				}else{
-					span.innerHTML = price*nums;
+					span = price*nums;
 				}
 				total();
 			}
 		}
 		// 合计函数
 		function total(){
-			let spans = $(".cart-total span");
+			let spans = $(".cart-total span").html();
 			//合计
-			let total = $(".fs14");
-			total.innerHTML= 0;
+			let total = $(".fs14 span").html();
+			total= 0;
 			for(let i=0;i<spans.length-1;i++){
-				total.innerHTML = parseFloat(total.innerHTML)+parseFloat(spans[i].innerHTML);
+				total = parseFloat(total)+parseFloat(spans[i]);
 			}
 		}
 	}
