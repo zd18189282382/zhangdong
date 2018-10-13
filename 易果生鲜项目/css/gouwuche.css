@@ -535,6 +535,30 @@ border-right:1px solid  #b4c1a3;
     margin-left: 0;
     cursor: pointer;
 }
+/* 购物车空 */
+.cart-none{
+    border: 1px solid #e3e6e0;
+    background: #fff;
+    line-height: 30px;
+    padding: 70px 0;
+    display:none;
+}
+.cart-none p{
+    height: 280px;
+    font-size: 14px;
+    text-align: center;
+    background: url(../img/foot4.jpg) no-repeat center bottom;
+}
+.cart-none p b{
+    font-size: 14px;
+    font-weight: normal;
+}
+.cart-none p b a{
+    margin-left: 15px;
+}
+.cart-none a{
+    color: #008842;
+}
 /* 特惠换购 */
 .preferential-buy{
 	position: relative;

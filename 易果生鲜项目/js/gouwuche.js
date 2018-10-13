@@ -36,42 +36,104 @@ $(function(){
 		//先获取所有的数量按钮
 		// let num = $(".itxt");
 		//循环这些数量按钮
-		
+		//减键的功能
 		for(let i=0;i<$(".decrement").length;i++){
 			$(".decrement")[i].onclick = function(){
 				//点击数量按钮，获取它的值'
 				// console.info(($(".itxt").val()-1));
 				
-				console.info($(".itxt").eq().val()-1);
-				let nums = $(".itxt").eq(i).val()-1;
-
+				// console.info($(".itxt").eq(i).val()-1);
+				let nums = parseFloat($(".itxt").eq(i).val())-1;
+				// if(nums<=0){
+				// 	nums=0;
+				// }
+				
+				
 				//单价
 				//通过点击的那一个input标签的父元素td的上一个节点td的innerHTML取整可以得到单价
-				let price = parseFloat($("cart-list .cart-price").html());
-				console.info($("cart-list .cart-price").html());
+				let price = parseFloat($(".cart-list .cart-price").html().slice(1));
+				// console.info(typeof(price));
+				// console.info(price);
+
 
 				//总价
 				//找到总价那一列显示数据的span标签，通过点击的那一个input标签的父元素td的下一个节点td的第一个孩子节点找到span
-				let span =$(".cart-total span").html();
+				let span =parseFloat($(".cart-list .cart-total span").html());
+				// console.info(span)
 				
 				//数量不能小于0
 				if(nums<=0){
 					nums = 0;
 					span = 0;
 				}else{
-					span = price*nums;
+					// console.info(price*nums);
+					span =(price*nums).toFixed(2);
+
 				}
+				$(".cart-list .cart-total span").eq(i).html(span);
+				$(".itxt").eq(i).val(nums);
+				total();
+			}
+		}
+		//加键的功能
+		for(let i=0;i<$(".increment").length;i++){
+			$(".increment")[i].onclick = function(){
+				//点击数量按钮，获取它的值'
+				// console.info(($(".itxt").val()-1));
+				
+				// console.info($(".itxt").eq(i).val()-1);
+				let nums = parseFloat($(".itxt").eq(i).val())+1;
+				// if(nums<=0){
+				// 	nums=0;
+				// }
+				
+				
+				//单价
+				//通过点击的那一个input标签的父元素td的上一个节点td的innerHTML取整可以得到单价
+				let price = parseFloat($(".cart-list .cart-price").html().slice(1));
+				// console.info(typeof(price));
+				// console.info(price);
+
+
+				//总价
+				//找到总价那一列显示数据的span标签，通过点击的那一个input标签的父元素td的下一个节点td的第一个孩子节点找到span
+				let span =parseFloat($(".cart-list .cart-total span").html());
+				// console.info(span)
+				
+				//数量不能小于0
+				if(nums<=0){
+					nums = 0;
+					span = 0;
+				}else{
+					// console.info(price*nums);
+					span =(price*nums).toFixed(2);
+
+				}
+				$(".cart-list .cart-total span").eq(i).html(span);
+				$(".itxt").eq(i).val(nums);
 				total();
 			}
 		}
 		// 合计函数
 		function total(){
-			let spans = $(".cart-total span").html();
+			let num=$(".cart-list .cart-total span");
+			// let spans =parseFloat($(".cart-list .cart-total span").html());
+			// console.log(spans);
 			//合计
-			let total = $(".fs14 span").html();
-			total= 0;
-			for(let i=0;i<spans.length-1;i++){
-				total = parseFloat(total)+parseFloat(spans[i]);
+			let total =parseFloat($(".fs14 span").html());
+			total=0;
+			if(num.length==0){
+				$(".fs14 span").html(0);
+				$(".cart-table").remove();
+				$(".cart-footer").remove();
+				$(".cart-none").css({
+					"display":"block"
+				})
+			}
+			for(let i=0;i<num.length;i++){
+				total += parseFloat(num.eq(i).html());
+				console.info(total.toFixed(2));
+				parseFloat($(".fs14 span").html(total.toFixed(2)));
 			}
 		}
 	}
