@@ -41,7 +41,9 @@ Slider.prototype.createUI= function(){
 		$span.css({
 			"backgroundImage":"url("+this.imgs[i]+")",
 			"position":"absolute",
-			"top":"0px", 
+			"top":"0px",
+			"transtion":"all 1s",
+			"transfrom":"scale(1.1)",
 			width: this.width+"%",	
 			height:this.height+"%",	
 			left:i==0?"0px":this.width+"%"
@@ -127,7 +129,7 @@ Slider.prototype.showImg = function(inOrd,outOrd){
 	this.$backgroundImage.eq(outOrd).animate({
 		// left:-1*this.width+"%"
 		left:-1*this.width+"%",
-		transform: "translateZ(100px)"
+		"transform": "scaleZ(1.1)"
 	},300);
 	//function(){
 	// 	this.animate({

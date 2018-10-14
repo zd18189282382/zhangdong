@@ -1,9 +1,9 @@
 //主购物页面
 $(function(){
-	adList();
-	cityshow();
-	clickOver();
-
+	adList();//商品联动
+	cityshow();//城市联动
+	clickOver();// 跳楼和回到顶部
+	buyer();//购物特效
 })
 // 跳楼和回到顶部
 function clickOver(){
@@ -43,7 +43,7 @@ $(".goTop").click(function(){
 // 头部横条
 window.onscroll=function(){
 	var scroolLong=document.documentElement.scrollTop || document.body.scrollTop;
-	console.info(scroolLong);
+	// console.info(scroolLong);
 	//头部横条
 	if(scroolLong<=100){
 		$(".header-fix").css({
@@ -107,3 +107,75 @@ function headerFix(){
 	"top": "33px"
 	});
 }
+
+//点击购买
+function buyer(){
+	let tod = 0;
+	for(let j=0;j<$(".addCart").length;j++){
+		$(".addCart").eq(j).click(function() {
+			tod++;
+			// console.info($(".img img").eq(i));
+			//复制img到a的下面
+			$($(".img img").eq(j)).clone().appendTo($(".img").eq(j).find("a"));
+			$($(".img a").eq(j).find("img").eq(1)).animate({
+				width: 40,
+				height: 40},
+				500, function() {
+				$($(".img a").eq(j).find("img")).not($(".img a").eq(j).find("img").eq(0)).remove();
+				$(".gouwuc b").html(tod);
+				$(".cor-b").html((tod*58.0).toFixed(2));
+			});
+		});
+	}
+	
+}
+
+
+
+	
+// // 2秒内不允许点击
+//  		var checkClick = false;
+//     	function checkClick() { 
+// 		 
+//  		if (checkClick == true) {   
+//          return false;  
+//         }  
+//         checkClick = true;  
+//     
+//         setTimeout(function() {  
+//             checkClick = false;  
+//         }, 2000);  
+//         return true;  	
+// 	}
+
+// function perice(){
+	
+// 	switch(i){
+// 		case 0: per=58.0;return ;
+// 		case 1: per=13.8;return ;
+// 		case 2: per=78.0;return ;
+// 		case 3: per=59.9;return ;
+// 		case 4: per=71.8;return ;
+// 	}	
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

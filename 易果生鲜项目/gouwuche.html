@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>购物车</title>
+	<link rel="shortcut icon" href="img/bitbug_favicon.ico" />
 	<link rel="stylesheet" href="css/gouwuche.css">
 </head>
 <body>
@@ -81,13 +82,13 @@
 		<a class="on-shapping" href="#">继续购物>></a>
 		</h2>
 		<!-- 所购商品 -->
-		<div class="cart-alert">
+	<div class="cart-alert">
 		<div class="cart-header">
 		<table class="cart-table">
 			<tbody>
 				<tr>
 					<th class="cart-check">
-					<input type="checkbox" class="chkAll">全选
+					<input type="checkbox" checked="checked" class="chkAll">全选
 					</th>
 					<th>商品信息</th>
 					<th class="cart-ub">悠币</th>
@@ -105,7 +106,7 @@
 			<tbody>
 				<tr>
 					<td class="cart-check cart-btn">
-					<input type="checkbox" >
+					<input type="checkbox" checked="checked">
 					</td>
 					<td class="cart-img"><a href="#"><img src="img/gouwu17.jpg" alt="#"/></a></td>
 					<td class="cart-info"><a href="#">芝士百丽巧克力芝士蛋糕1.2kg</a></td>
@@ -113,9 +114,9 @@
 					<td class="cart-price">￥218.00</td>
 					<td class="cart-num">
 						<div class="cart-form">
-							<a href="#" class="decrement"></a>
+							<p class="decrement"></p>
 							<input type="text" class="itxt" oldnum="23" value="23">
-							<a href="#" class="increment"></a>
+							<p class="increment"></p>
 						</div>
 					</td>
 					<td class="cart-total">￥<span>5041.00</span></td>
@@ -132,7 +133,7 @@
 			<tbody>
 				<tr>
 					<td class="cart-check cart-btn">
-					<input type="checkbox">
+					<input type="checkbox" checked="checked">
 					</td>
 					<td class="cart-img"><a href="#"><img src="img/gouwu22.jpg" alt="#"/></a></td>
 					<td class="cart-info"><a href="#">恒都澳洲牛腩块500g</a></td>
@@ -140,9 +141,9 @@
 					<td class="cart-price">￥33.90</td>
 					<td class="cart-num">
 						<div class="cart-form">
-							<a href="#" class="decrement"></a>
+							<p class="decrement"></p>
 							<input type="text" class="itxt" oldnum="1" value="1">
-							<a href="#" class="increment"></a>
+							<p class="increment"></p>
 						</div>
 					</td>
 					<td class="cart-total">￥<span>33.90</span></td>
@@ -187,20 +188,20 @@
 			<div class="wrap">
 				<div class="f1">
 					<label>
-						<input type="checkbox" class="chkAll">全选
+						<input type="checkbox" checked="checked" class="chkAll">全选
 					</label>
 					<a href="#">删除选中的商品</a>
-					<a href="#">清空购物车</a>
+					<a href="#" class="cart-clear">清空购物车</a>
 				</div>
 				<div class="f2">
 					<span class="ub">悠币：<em>0</em>个</span>
 					<span class="fs14">总价：<em>￥<span>5047.90</span></em>
 					</span>
-					<a href="#" class="btn">去结算</a>
+					<a href="denglu.html" class="btn">去结算</a>
 				</div>
 			</div>
 		</div>
-		</div>
+	</div>
 		<!-- 购物车空 -->
 		<div class="cart-none">
 			<p>	
