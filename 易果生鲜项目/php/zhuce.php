@@ -1,9 +1,19 @@
 <?php
-
-/**
- * @Author: Administrator
- * @Date:   2018-10-14 23:10:01
- * @Last Modified by:   Administrator
- * @Last Modified time: 2018-10-14 23:10:22
- */
+//获取数据
+	$Phone_Mobile = $_GET['Phone_Mobile'];
+	//建立连接
+	$con = mysql_connect("localhost","root","root");
+	//选择数据库
+	mysql_select_db("mydb",$con);
+	//执行sql语句
+	$sqlstr = "select * from user where Phone_Mobile = '$Phone_Mobile'";
+	$result = mysql_query($sqlstr,$con);
+	//判断是否存在
+	$rows = mysql_num_rows($result);
+	if($rows>0){
+		//说明数据存在，不能在被注册了
+		echo "0";
+	}else{
+		echo "1";
+	}
 ?>

@@ -5,6 +5,8 @@
 	<title>注册页面</title>
 	<link rel="shortcut icon" href="img/bitbug_favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/zhuce.css"/>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/zhuceyanzheng.js"></script>
 </head>
 <body>
 <!-- 头部 -->
@@ -35,8 +37,7 @@
                                 <span class="field-name">手机号</span>
                                 <input class="input input-phone" id="Phone_Mobile" name="Phone_Mobile" placeholder="请输入您的手机号" type="text" value="" />
                                 <span>
-                                	<!-- <i></i>
-									手机号码输入有误 -->
+                                	<i class="showvalue"></i>
                                 </span>
                             </p>
                             <p>
@@ -44,14 +45,14 @@
                                 <input class="input input-yzm" id="Phone_VerifyCode" name="Phone_VerifyCode" placeholder="手机验证码" type="text" value="" />
                                 <a href="javascript:void(0)" class="btn-yzm" id="Phone_SendCode">获取验证码</a>
                                 <span>
-                                	<!-- <i></i>
-                                	验证码不能为空 -->
+                                	<i class="kong-yzm"></i>
+                                	<!-- 验证码不能为空 -->
                                 </span>
                             </p>
                             <p>
                                 <span class="field-name">设置密码</span>
                                 <input class="input input-key" id="Phone_Password" name="Phone_Password" placeholder="6-20位字母、符号或数字" type="password" />
-                                <span></span>
+                                <span class="pass-mm"></span>
                             </p>
                             <p>
                                 <span class="field-name">确认密码</span>
@@ -60,7 +61,7 @@
                             </p>
                             <p>
                                 <span class="field-name">邀请码</span>
-                                <input class="input input-key" id="Phone_AtCode" name="Phone_AtCode" placeholder="邀请码" type="text" value="" />
+                                <input class="input input-key" id="Phone_AtCode" name="Phone_AtCode" placeholder="邀请码(可以不填)" type="text" value="" />
                                 <span></span>
                             </p>
                             <p>
@@ -88,6 +89,7 @@
 	</div>
 </div>
 </form>
+
 		<!-- 页尾 -->
 	<div class="footer">
 		<div class="wrap">
@@ -168,3 +170,31 @@
 
 </body>
 </html>	
+<script type="text/javascript">
+	$(function(){
+		register();
+		biaodan();
+	})
+	 function register(){
+		$('.Phone_Mobile').onblur = function(){
+			//创建对象
+			let xhr = new XMLHttpRequest();
+			//设置open参数
+			xhr.open("get","php/zhuce.php?Phone_Mobile="+this.value,true);
+			//回调函数
+			xhr.onreadystatechange = function(){
+				//接受响应
+				if(xhr.readyState==4 && xhr.status==200){
+					let str = xhr.responseText;
+					if(str=='0'){
+						$('.showvalue').innerHTML = '该号码已被注册，请另起他名';
+					}else{
+						$('.showvalue').innerHTML = '该号码可以使用';
+					}
+				}
+			}
+			//发送请求
+			xhr.send();
+		}
+	}
+</script>
