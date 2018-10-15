@@ -1,0 +1,767 @@
+@charset "utf-8";
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, option, select, pre, code, form, fieldset, legend, input, button, textarea, blockquote, th, td, p {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+html{   
+    font-size: 26.67vw;
+}
+body , input , textarea{
+    font-family:Arial,Verdana,"\5b8b\4f53";
+    font-size: 12px;
+    background-color: #f7f8f8;
+}
+a{
+    text-decoration:none;
+    color: #444;
+    cursor: pointer;
+}
+ul,ol{
+    list-style:none;
+}
+img{
+    border:none;
+    display: block;
+}
+/* //去掉状态 */
+i,em,strong,b,s{
+    font-style: normal;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+    font-size: 12px;
+}
+.f1{
+    float: left;
+}
+.f2{
+    float: right;
+}
+i,s{
+    display: inline-block;
+    vertical-align: middle;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+input{
+	vertical-align: middle;
+}
+/* //防止高度塌陷  */
+.wrap:after, .clearfix:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+/* 顶部工具栏 */
+.site{
+    z-index: 99;
+    position: relative;
+    width: auto;
+    height: 30px;
+    background: #f7f9f8;
+}
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.site .siteLeft li{
+    line-height: 30px;
+    margin-right: 10px;
+}
+.site .city-s{
+    position: relative;
+    color: #008842;
+}
+.site .city-sz{
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    margin: 7px 0;
+    cursor: pointer;
+}
+.site s{
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 8px;
+    height: 4px;
+    margin-left: 5px;
+    background: url(../img/nav1.png) no-repeat 0 0;
+    transition: all 0.15s;
+}
+.site a:hover s{
+     background: url(../img/nav1.png) no-repeat -13px 0;
+}
+.site a:hover{
+    color: #008842;
+}
+/* 头部右半部分 */
+.site .siteRight li{
+    position: relative;
+    float: right;
+    line-height: 30px;
+    padding: 0 10px;
+    text-align: center;
+}
+.site .siteRight li i{
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    background: url(../img/nav1.png) no-repeat left top;
+}
+.site .siteRight .rukou i{
+    background-position:-86px 0;
+}
+.site .siteRight .mobile a{
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px 0 10px;
+    z-index: 100;
+    border: solid #f7f9f8;
+    border-width: 0 1px;
+    position: relative;
+}
+.site .siteRight .mobile:hover .mob{
+    display: block;
+}
+.site .siteRight .mobile:hover .me-tit{
+background-color: #fff;
+border-bottom:1px solid #fff;
+border-left:1px solid  #b4c1a3;
+border-right:1px solid  #b4c1a3;
+}
+.site .siteRight .mobile .mob{
+    width: 125px;
+    padding: 10px;
+    line-height: 25px;
+    text-align: left;
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    border: 1px solid #b4c1a3;
+    background: #fff;
+}
+.siteRight .mobile .mob .me-itme{
+    margin: 5px 0;
+}
+.siteRight .mobile .mob .me-itme img{
+    display: block;
+    width: 125px;
+    height: 125px;
+}
+.siteRight .mobile .mob span{
+    padding-left: 20px;
+}
+.site .siteRight .mobile{
+    padding:0 0; 
+}
+.site .siteRight .myyiguo{
+    padding:0 0; 
+}
+.site .siteRight .myyiguo a{
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px 0 10px;
+    cursor: pointer;
+    z-index: 100;
+    border: solid #f7f9f8;
+    border-width: 0 1px;
+    position: relative;
+}
+.site .siteRight .myyiguo:hover .con{
+display: block;
+}
+.site .siteRight .myyiguo:hover .guo-title{
+background-color: #fff;
+border-bottom:1px solid #fff;
+border-left:1px solid  #b4c1a3;
+border-right:1px solid  #b4c1a3;
+}
+.siteRight .myyiguo .con{
+    width: 100px;
+    padding: 5px 12px;
+    text-align: left;
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    border: 1px solid #b4c1a3;
+    background: #fff;
+}
+.siteRight .myyiguo .con a{
+    display: block;
+    line-height: 25px;
+    color: #727272;
+    padding:1px;
+}
+.siteRight .myyiguo .con a .coupon{
+    margin-left: 10px;
+    padding: 0 5px;
+    color: #fff;
+    background: #008842;
+    -webkit-border-radius: 16px;
+}
+.site .siteRight .chuzhi i{
+    width: 22px;
+    background-position:-147px 0;
+}
+.site .siteRight .mobile i{
+    background-position:-64px 0;
+}
+.site .siteRight .myyiguo i{
+    background-position:-40px 0; 
+}
+.site .siteRight s{
+    top: 13px;
+}
+/* 头部 */
+.header{
+	border: none;
+    background: #e0e0e0;
+}
+.wrap{
+	width: 1200px;
+    margin: 0 auto;
+}
+.header .wrap{
+	height: 58px;
+    padding: 15px 0 5px 0;
+}
+.logo{
+    position: relative;
+    float: left;
+}
+.logo a{
+	display: block;
+	width: 195px;
+    height: 50px;
+    background: url(../img/logom.png) no-repeat;
+}
+.steps{
+	float: right;
+    padding-top: 20px;
+    margin-right: 40px;
+}
+.steps li{
+	position: relative;
+    float: left;
+}
+.steps li b{
+	background: url(../img/foot6.png) no-repeat;
+    width: 36px;
+    height: 36px;
+    display: block;
+    float: left;
+}
+.steps li .b1{
+	background-position:0 0; 
+}
+.steps li .b2{
+	background-position:-42px 0px; 
+}
+.steps li .b3{
+	background-position:-84px 0px; 
+}
+.steps .on .b1{
+	background-position: 0 -44px;
+}
+.steps li span{
+	position: absolute;
+    top: -20px;
+    right: 0;
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+    right: -62px;
+    color: #333;
+}
+.steps .on span{
+	color: #008842;
+}
+.steps li i{
+	width: 165px;
+    height: 6px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-width: 1px 0;
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-right: 0;
+    overflow: hidden;
+}
+/* 我的购物车 */
+.cart{
+	margin-top:20px;
+}
+.cart .wrap{
+	background-color: #fff;
+}
+.cart h2{
+	font-weight: normal;
+    height: 38px;
+    line-height: 38px;
+    background-color: #fff;
+    /* background-position: 0 0; */
+    border-bottom: 2px solid #05984d;
+    text-indent: -9999em;
+    position: relative;
+    background: url(../img/foot5.png) no-repeat;
+}
+.cart .city{
+	position: absolute;
+    left: 230px;
+    top: 4px;
+    text-indent: 0;
+}
+.cart .city-sz{
+	float: left;
+    height: 16px;
+    line-height: 16px;
+    margin: 7px 0px 7px 20px;
+    cursor: pointer;
+}
+.cart .city-name{
+	overflow: hidden;
+    height: 25px;
+    float: left;
+}
+.cart .city-name a{
+	z-index: 100;
+    position: relative;
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    padding: 0 5px 5px 5px;
+    cursor: pointer;
+}
+.cart .city-name a:hover{
+	background-color: #008842;
+}
+.on-shapping{
+	cursor:pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #008842;
+    text-indent: 0;
+    text-decoration: underline;
+    margin-right: 22px;
+}
+/* 所购商品 */
+.cart-alert{
+	border: 1px solid #e3e6e0;
+    border-top: 0;
+    padding: 10px 20px;
+    background-color: #fff;
+}
+.cart-table{
+	width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin-bottom: 10px;
+}
+.cart-table th{
+	height: 40px;
+    background-color: #f1f1f1;
+    font: 12px/40px Simsun;
+    color: #262626;
+    text-align: center;
+    padding: 0 10px;
+}
+.cart-table .cart-check{
+	width: 120px;
+	text-align: left;
+    padding-left: 20px;
+}
+.cart-table th input{
+	margin-right: 20px;
+    vertical-align: middle;
+}
+.cart-table .cart-ub{
+	width: 75px;
+}
+.cart-price{
+	width: 100px;
+    color: #262626;
+    font-size: 14px;
+    line-height: 1em;
+}
+.cart-num{
+	width: 110px;
+    color: #262626;
+    font: 12px/1em Simsun;
+}
+.cart-total{
+	width: 110px;
+    color: #e93005;
+    font-size: 14px;
+    line-height: 1em;
+}
+.cart-spec{
+	width: 110px;
+    color: #262626;
+    font: 12px/1em Simsun;
+}
+.cart-opera{
+	width: 110px;
+    color: #262626;
+    font: 12px/2em Simsun;
+}
+.cart-img{
+	width: 80px;
+    position: relative;
+}
+.cart-img img{
+	width: 80px;
+    height: 80px;
+    border: 1px solid #ebebeb;
+    position: relative;
+}
+.cart-table .cart-info{
+	text-align: left;
+}
+.cart-table .cart-btn{
+	width: 20px;
+}
+.cart-table td{
+	border-top: 1px solid #ebebeb;
+    padding: 10px;
+    text-align: center;
+}
+.cart-info a{
+	font: 14px/2.4em Simsun;
+}
+.cart-form{
+	position: relative;
+    overflow: hidden;
+    width: 90px;
+    height: 30px;
+}
+.decrement, .increment{
+	margin: 0;
+    width: 18px;
+    height: 24px;
+    background: url(../img/foot5.png) no-repeat;
+}
+.decrement {
+	float: left;
+    background-position: 0 -40px;
+}
+.increment {
+	float: right;
+    background-position: -20px -40px;
+}
+.itxt{
+	position: absolute;
+    left: 22px;
+    top: 0;
+    border: 1px solid #cacbcb;
+    width: 42px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    padding: 1px;
+    margin: 0;
+    font-size: 12px;
+    font-family: verdana;
+    color: #333;
+    -webkit-appearance: none;
+}
+/* 结算 */
+.cart-footer{
+	background-color: #f7f8f8;
+    font-size: 12px;
+    line-height: 1em;
+    color: #666;
+    margin-top: 20px;
+    padding: 10px;
+}
+.cart-footer .wrap{
+	width: 100%;
+    background-color: #f7f8f8;
+}
+.cart-footer label{
+	margin-left: 20px;
+    vertical-align: middle;
+}
+.cart-footer input{
+	margin-right: 5px
+}
+.cart-footer a{
+	font: 12px/40px Simsun;
+    margin-left: 20px;
+}
+.cart-footer span{
+	margin-right: 20px;
+}
+.cart-footer .ub em{
+	color: #249c61;
+    font: bold 14px/1em Simsun
+}
+.cart-footer .fs14{
+	font-size: 14px;
+}
+.cart-footer em{
+	color: #ff5317;
+    font-weight: bold;
+    margin: 0 5px;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1em;
+}
+.cart-footer .btn{
+	font: bold 18px/1em "微软雅黑";
+    background-color: #ff5317;
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-left: 0;
+    cursor: pointer;
+}
+/* 购物车空 */
+.cart-none{
+    border: 1px solid #e3e6e0;
+    background: #fff;
+    line-height: 30px;
+    padding: 70px 0;
+    display:none;
+}
+.cart-none p{
+    height: 280px;
+    font-size: 14px;
+    text-align: center;
+    background: url(../img/foot4.jpg) no-repeat center bottom;
+}
+.cart-none p b{
+    font-size: 14px;
+    font-weight: normal;
+}
+.cart-none p b a{
+    margin-left: 15px;
+}
+.cart-none a{
+    color: #008842;
+}
+/* 特惠换购 */
+.preferential-buy{
+	position: relative;
+    border: 1px solid #e3e6e0;
+    margin-top: 25px;
+    overflow: hidden;
+    background: #fff;
+}
+.preferential-buy h3{
+	border-bottom: 1px solid #79ae92;
+    background-color: #eff7f1;
+    height: 38px;
+    padding-left: 18px;
+    color: #008842;
+    font: bold 16px/38px Simsun;
+}
+.preferential-buy h3 a{
+	position: absolute;
+    top: 0;
+    right: 15px;
+    display: block;
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+}
+.preferential-buy ul{
+	margin-left: 2px;
+}
+.preferential-buy li{
+	width: 299px;
+    height: 90px;
+    background-color: #fff;
+    padding: 10px 0;
+    border: 1px solid #e3e6e0;
+    border-bottom: 1px solid #e3e6e0;
+    float: left;
+    margin-left: -2px;
+    margin-bottom: -1px;
+}
+.product{
+    position: relative;
+    overflow: hidden;
+    width: 224px;
+    height: 281px;
+    padding: 10px;
+}
+.preferential-buy .product .p-img{
+    float: left;
+    width: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.product .p-img{
+    width: 100%;
+    margin-bottom: 5px;
+    overflow: hidden;
+    position: relative
+}
+.product .p-img img{
+    width: 90px;
+    height: 90px;
+}
+.product .p-info{
+    padding: 0 10px;
+}
+.product .p-name{
+    line-height: 20px;
+    padding: 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product .p-price{
+    position: relative;
+    color: #333;
+    line-height: 24px;
+}
+.product .p-price span{
+    display:block;
+    /* float: left; */
+}
+.product .p-price strong{
+    font-size: 20px;
+    color: #e93005;
+}
+.product .p-price b{
+    font-weight: normal;
+    color: #333;
+    margin-right: 3px;]
+
+}
+.product .p-price del{
+    float: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    /* float: right; */
+    font-size: 13px;
+    color: #888;
+}
+.product .p-hg a{
+    padding: 3px 8px 3px;
+    background-color: #f14b00;
+    color: #fff;
+    font: bold 12px/3 Simsun;
+    border-radius: 2px;
+}
+/* 尾页 */
+.footer{
+    zoom: 1;
+    clear: both;
+    height: 400px;
+    margin-top: 30px;
+    position: relative;
+    padding-bottom: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+.footer .wrap{
+    margin: 50px auto 0;
+    padding-top: 30px;
+}
+.footer dl{
+    width: 190px;
+    float: left;
+    margin-left: 50px;
+    display: inline;
+}
+.footer dl dt{
+    height: 23px;
+    line-height: 23px;
+    background: url(../img/foot1.png) no-repeat;
+    font-size: 14px;
+    text-indent: 40px;
+}
+.footer .fot1 dt{
+    background-position: 0 0;
+}
+.footer .fot2 dt{
+    background-position: 0 -23px;
+}
+.footer .fot3 dt{
+    background-position: 0 -46px;
+}
+.footer .fot4 dt{
+    background-position: 0 -69px;
+}
+.footer .fot5 dt{
+    background-position: 0 -93px;
+}
+.footer dl dd{
+    border-left: 1px dashed #A8A8A8;
+    padding-left: 20px;
+    height: 110px;
+    min-height: 110px;
+    margin: 15px 0 0 13px;
+}
+.footer dl dd a{
+    color: #575556;
+    line-height: 22px;
+}
+.footer .fot-serve{
+    clear: both;
+    text-align: center;
+    padding: 60px 0 20px;
+    color: #008842;
+    font-size: 14px;
+}
+.footer .fot-serve span{
+    display: inline-block;
+    padding: 0 10px;
+}
+.footer .fot-copy{
+    clear: both;
+    color: #717171;
+    text-align:center;
+    line-height: 22px;
+}
+.footer .fot-copy a{
+    color: #717171;
+}
+.footer .fot-copy .fot-01 a:hover{
+    color: #008842; 
+}
+.footer .fot-gongan a{
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    zoom: 1;
+    vertical-align: middle;
+}
+.footer .fot-gongan .fot-last{
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+.footer .fot-gongan .fot-last img{
+    float: left;
+}
+.footer .fot-gongan .fot-last span{
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin: 0px 0px 0px 5px;
+    color: #939393;
+}
