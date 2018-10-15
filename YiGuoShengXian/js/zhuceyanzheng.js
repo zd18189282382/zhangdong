@@ -1,5 +1,4 @@
  //表单验证
-
 function biaodan(){
 	console.log($("#Phone_Password"));
   $("#Phone_Password").keydown(function(){
