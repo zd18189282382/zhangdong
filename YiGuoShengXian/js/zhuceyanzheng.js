@@ -1,6 +1,6 @@
  //表单验证
 function biaodan(){
-	console.log($("#Phone_Password"));
+//	console.log($("#Phone_Password"));
   $("#Phone_Password").keydown(function(){
   			console.log($("#Phone_Password").val());
        if(check("Phone_Password",$("#Phone_Password").val())){
@@ -42,8 +42,7 @@ function biaodan(){
             // 11位手机号码
             case "Phone_Mobile":
                 var reg = /^(13[0-9]|15[012356789]|18[0-9]|17[6789]|14[57])[0-9]{7}$/;   // 注意：前面可以不写中括号
-                break;
-            
+                break;          
         }
         return reg.test(val);
     }
