@@ -37,11 +37,11 @@
 					</p>
 					<p>
 						<span class="input-phone-icon">&nbsp;</span>
-						<input class="input" type="text" name="UserName" placeholder="邮箱/账号/已验证手机">
+						<input class="input" type="text" name="UserName" id="Phone_Mobile" placeholder="邮箱/账号/已验证手机">
 					</p>
 					<p> 
 						<span class="input-key-icon">&nbsp;</span>
-						<input class="input input-key" type="text" name="Pwd" placeholder="密码">
+						<input class="input input-key" type="text" id="Phone_Password" name="Pwd" placeholder="密码">
 					</p>
 					<p>
 						<input class="input input-key" type="text" name="VerifyCode" placeholder="验证码"
@@ -61,7 +61,7 @@
 						</span>
 					</p>
 					<p>
-						<a href="#" class="btn-green-l">登&nbsp;录</a>
+						<a href="javascript:;" class="btn-green-l">登&nbsp;录</a>
 					</p>
 					<p>第三方登录</p>
 					<div>
@@ -154,3 +154,28 @@
 
 </body>
 </html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script>
+	$(function(){		
+		$(".btn-green-l").click(function(){
+			//1、
+			$.post(
+				"php/denglu.php",
+				{
+					"Phone_Mobile":$("#Phone_Mobile").val(),
+					"Phone_Password":$("#Phone_Password").val()
+				},
+				function(data){					
+					if(data=="1"){//登录成功！
+						alert("登陆成功");
+						//记录cookie
+//						saveCookie("userId",$("#userId").val(),7);
+						location.href="index.html";
+					}else{
+						alert("登录失败，用户名或者密码不对！");
+					}
+				}
+			);
+		});
+	});
+</script>

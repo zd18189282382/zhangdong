@@ -20,17 +20,21 @@ gulp.task("copy-img",function(){
 	gulp.src("img/**/*").pipe(gulp.dest("D:\\phpStudy\\WWW\\YiGuoShengXian\\img"));
 });
 //复制所有css文件
-// gulp.task("copy-css",function(){
-// 	gulp.src("css/**/*").pipe(gulp.dest("D:\\phpStudy\\WWW\\LPPZ\\css"));
-// });
+   gulp.task("copy-css",function(){
+   	gulp.src("css/**/*").pipe(gulp.dest("D:\\phpStudy\\WWW\\YiGuoShengXian\\css"));
+   });
 //复制所有js文件
 gulp.task("copy-js",function(){
 	gulp.src("js/**/*").pipe(gulp.dest("D:\\phpStudy\\WWW\\YiGuoShengXian\\js"));
 });
-//复制所有sass文件并转为css文件
-gulp.task("sass",function(){
-	gulp.src("sass/**/*.scss").pipe(sass()).pipe(gulp.dest("D:\\phpStudy\\WWW\\YiGuoShengXian\\css"))
+//复制所有php文件
+gulp.task("copy-php",function(){
+	gulp.src("php/**/*").pipe(gulp.dest("D:\\phpStudy\\WWW\\YiGuoShengXian\\php"));
 });
+////复制所有sass文件并转为css文件
+//gulp.task("sass",function(){
+//	gulp.src("sass/**/*.scss").pipe(sass()).pipe(gulp.dest("D:\\phpStudy\\WWW\\YiGuoShengXian\\css"))
+//});
 // gulp.task("data",function(){
 // 	gulp.src(["xml/*.xml","json/*.json","!json/test.json"]).pipe(gulp.dest("D:\\phpStudy\\WWW\\LPPZ\\data"));
 // });
@@ -38,7 +42,8 @@ gulp.task("sass",function(){
 gulp.task("watch",function(){
 	gulp.watch("*.html",["copy-html"]);
 	gulp.watch("img/**/*",["copy-img"]);
-	// gulp.watch("css/**/*.css",["copy-css"]);
+	 gulp.watch("css/**/*.css",["copy-css"]);
 	gulp.watch("js/**/*.js",["copy-js"]);
+	gulp.watch("php/**/*.php",["copy-php"]);
 	// gulp.watch("sass/**/*.scss",["sass"]);
 });

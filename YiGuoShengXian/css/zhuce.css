@@ -123,6 +123,13 @@ i,s{
 .register .input-yzm{
 	width: 147px;
 }
+.suijise{
+	width: 60px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	background:url(../img/suiji.png) no-repeat;
+}
 .gray{
 	color: #666666;
 }
