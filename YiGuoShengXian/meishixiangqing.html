@@ -11,7 +11,7 @@
 <div class="site">
 	<div class="wrap">
 		<ul class="siteLeft f1">
-			<li class="f1">欢迎光临易果生鲜！</li>
+			<li class="f1 huanying">欢迎光临易果生鲜！</li>
 			<li class="city-s f1">
 				<div class="city-sz">配送至：</div>
 				<div class="f1">
@@ -397,7 +397,7 @@
 	<!--美食图-->
 	<div class="pic-intro clearfix">
 		<div class="pic-im">
-			<img src="img/mx1.jpg" alt="#" />
+			<img class="goodsimg" src="img/mx1.jpg" alt="#" />
 		</div>
 		<div class="pic-ic">
 			<h1>茶碗蒸</h1>
@@ -620,3 +620,28 @@
 <script src="js/jquery-1.8.3.min.js"></script>
 <script src="js/city.js"></script>
 <script src="js/meishixiangqing.js"></script>
+<script type="text/javascript" src="js/huoqucookie.js" ></script>
+<script>
+	$(function(){
+	//1、从cookie中读取商品编号goodsid
+	let goodsid = getCookie("goodsid");
+	
+	//2、发送ajax请求，获取商品信息
+	$.ajax({
+		type:"get",
+		url:"php/getGoodsInfo.php",
+		async:true,
+		data:{
+			"goodsId":goodsid
+		},
+		success:function(data){
+//			$("#goodsname").html(data.goodsname);
+//			$("#goodsprice").html(data.goodsprice);
+//			$("#goodscount").html(data.goodscount);
+			$("#goodsimg").attr("src",data.goodsImg);
+		},
+		dataType:"json"
+	});	
+});
+
+</script>

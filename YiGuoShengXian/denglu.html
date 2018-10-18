@@ -41,7 +41,7 @@
 					</p>
 					<p> 
 						<span class="input-key-icon">&nbsp;</span>
-						<input class="input input-key" type="text" id="Phone_Password" name="Pwd" placeholder="密码">
+						<input class="input input-key" type="password" id="Phone_Password" name="Pwd" placeholder="密码">
 					</p>
 					<p>
 						<input class="input input-key" type="text" name="VerifyCode" placeholder="验证码"
@@ -168,14 +168,27 @@
 				function(data){					
 					if(data=="1"){//登录成功！
 						alert("登陆成功");
-						//记录cookie
+	
+	
 //						saveCookie("userId",$("#userId").val(),7);
 						location.href="index.html";
 					}else{
 						alert("登录失败，用户名或者密码不对！");
 					}
+					if(data=="1"){
+					let Phone_Mobile=$("#Phone_Mobile").val();
+					let Phone_Password=$("#Phone_Password").val();
+					addCookie(Phone_Mobile,Phone_Password,60);
+					}
 				}
 			);
 		});
+		
+		
 	});
+		function addCookie(key,value,dayCount){
+		var d = new Date();
+		d.setDate(d.getDate()+dayCount);
+		document.cookie = key+"="+escape(value)+";expires="+d.toGMTString();
+}
 </script>
