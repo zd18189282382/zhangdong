@@ -3,7 +3,6 @@ $(function(){
 	adList();//商品联动
 	cityshow();//城市联动
 	clickOver();// 跳楼和回到顶部
-	colBoder();//边框变色
 })
 // 跳楼和回到顶部
 function clickOver(){
@@ -28,20 +27,4 @@ window.onscroll=function(){
 			"display":"block"
 		});
 	}
-}
-//划过li边框变色
-function colBoder(){
-	for(let i=0;i<$(".rec-item").length;i++){
-		$(".rec-item").eq(i).hover(function(){
-			$(this).css({
-				"borderColor":"#85b100"
-			})
-		},
-		function(){
-			$(this).css({
-				"borderColor":"#fff"
-			})
-		})
-	}
-	
 }

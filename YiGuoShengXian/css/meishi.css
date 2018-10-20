@@ -699,6 +699,8 @@ table {
       width: 270px;
       height: 270px; }
 
+.rec-item:hover {
+  border-color: #85b100; }
 .info {
   padding: 10px 0; }
   .info .name {
